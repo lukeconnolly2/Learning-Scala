@@ -1,5 +1,9 @@
-@main def hello: Unit = 
-  println("Hello world!")
-  println(msg)
+@main def hello: Unit =
+  val clonmore = Team("Clonmore")
 
-def msg = "I was compiled by Scala 3. :)"
+  for i <- 0 until 10 do clonmore.increment_points()
+
+  println(clonmore)
+
+
+
