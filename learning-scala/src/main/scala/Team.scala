@@ -1,4 +1,4 @@
-class Team(val name: String):
+class Team(val name: String) extends Ordered[Team]:
   var points: Int = 0
   var score_for: Int = 0
   var score_against: Int = 0
@@ -13,4 +13,7 @@ class Team(val name: String):
     score_against += 1
 
   override def toString() =
-    s"Points: ${points}, Score for: ${score_for}, Score Against: ${score_against} "
+    s"${name} ${points}"
+
+  override def compare(that: Team) =
+    that.points.compare(points)
